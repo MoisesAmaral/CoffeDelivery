@@ -4,7 +4,5 @@
 - Date of release: 2022-08-06
 - Language: JavaScript
 - Framework: React.js
-- Database: Oracle plsql
+- Database: Oracle SQL
 - Version: 1.0.0
-
-
