@@ -3,7 +3,8 @@ import {ContainerNav,
         CartLocalNav,
         LogoNav,
         LocalNav,
-        CartNav
+        CartNav,
+        CartNavCounter
     } from './stylesNavbar'
     import { ShoppingCart } from 'phosphor-react'
     import Logo from '../../assets/logo.svg'
@@ -21,8 +22,9 @@ export function Navbar(){
                         <img src={Location} alt="" /> Ipatinga, MG
                     </LocalNav>
                     <CartNav>
-                        <ShoppingCart size={32} />
+                        <ShoppingCart size={28} color="#c47f17" weight="fill" />
                     </CartNav>
+                    <CartNavCounter>2</CartNavCounter>
                 </CartLocalNav>
             </ContentNav>
         </ContainerNav>

@@ -6,15 +6,16 @@ export const ContainerNav = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--black);
 `
 export const ContentNav = styled.div`
     width: 100%;
-    height: 10.4rem;
+    height: 8.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 3.2rem 16rem;
+    padding: 3.2rem 20rem;
 `
 export const LogoNav = styled.div`
 
@@ -36,8 +37,8 @@ export const LocalNav = styled.button`
     border: none;
     border-radius: 8px;
 
-    background: var(--purple-light);
-    color: var(--purple-dark);
+    background: var(--purple);
+    color: var(--white);
     font-size: 1.4rem;
     font-weight: 400;
 
@@ -48,5 +49,47 @@ export const LocalNav = styled.button`
     }
 `
 export const CartNav = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    background: var(--yellow-light);
+
+    width: 3.8rem;
+    height: 3.8rem;
+    padding: .8rem;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: all .2s;
+
+    &:hover{
+        background: var(--yellow);
+
+        svg{
+        fill: var(--white);
+    }
+    }
+    
+`
+export const CartNavCounter = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2rem;
+    margin-left: -3rem;
+
+    width: 2rem;
+    height: 2rem;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--purple);
+    background: var(--white);
+
+    border: solid 2px var(--purple);
+    border-radius: 50%;
+    padding: .5rem;
+
+    transition: all ease-in .2s;
 `
