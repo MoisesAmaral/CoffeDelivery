@@ -2,156 +2,177 @@
     "stock": [
         {
             "id": 1,
-            "amount": 10
+            "amount": 8
         },
         {
             "id": 2,
-            "amount": 10
+            "amount": 2
         },
         {
             "id": 3,
-            "amount": 10
+            "amount": 3
         },
         {
             "id": 4,
-            "amount": 10
+            "amount": 5
         },
         {
             "id": 5,
-            "amount": 10
+            "amount": 1
         },
         {
             "id": 6,
-            "amount": 10
+            "amount": 7
         },
         {
             "id": 7,
-            "amount": 10
+            "amount": 6
         },{
             "id": 8,
-            "amount": 10
+            "amount": 3
         }
         ,{
             "id": 9,
-            "amount": 10
+            "amount": 7
         }
         ,{
             "id": 10,
-            "amount": 10
+            "amount": 8
         },{
             "id": 11,
-            "amount": 10
+            "amount": 3
         },
         {
             "id": 12,
-            "amount": 10
+            "amount": 1
         },{
             "id": 13,
-            "amount": 10
+            "amount": 2
         },
         {
             "id": 14,
-            "amount": 10
+            "amount": 4
         }
     ],
     "Products":[
         {
             "id": 1,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
-        },
+            "name": "Expresso Tradicional",
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "category": "Tradicional",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/1.svg"        },
         {
             "id": 2,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Expresso Americano",
+            "description": "Expresso diluído, menos intenso que o tradicional",
+            "category": "Tradicional",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/2.svg"
         },
         {
-            "id": 3,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "id": 3,  
+            "name": "Expresso Cremoso",
+            "description": "Café expresso tradicional com espuma cremosa",
+            "category": "Tradicional",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/3.svg"
         },
         {
             "id": 4,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Expresso Gelado",
+            "description": "Bebida preparada com café expresso e cubos de gelo",
+            "category": "Tradicional",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/4.svg"
         },
         {
             "id": 5,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Café com Leite",
+            "description": "Meio a meio de expresso tradicional com leite vaporizado",
+            "category": "Tradicional",
+            "category2":"Com leite",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/5.svg"
         },
         {
             "id": 6,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Latte",
+            "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+            "category": "Tradicional",
+            "category2": "Com leite",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/6.svg"
         },
         {
             "id": 7,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Capuccino",
+            "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
+            "category": "Tradicional",
+            "category2":"Com leite",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/7.svg"
         },
         {
             "id": 8,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Macchiato",
+            "description": "Café expresso misturado com um pouco de leite quente e espuma",
+            "category": "Tradicional",
+            "category2":"Com leite",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/8.svg"
         },
         {
             "id": 9,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Mocaccino",
+            "description": "Café expresso com calda de chocolate, pouco leite e espuma",
+            "category": "Tradicional",
+            "category2":"Com leite",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/9.svg"
         },
-        {
+        {        
             "id": 10,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Chocolate Quente",
+            "description": "Bebida feita com chocolate dissolvido no leite quente e café",
+            "category": "Especial",
+            "category2":"Com leite",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/10.svg"
         },
         {
             "id": 11,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Cubano",
+            "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
+            "category": "Especial",
+            "category2": "Alcoólico",
+            "category3": "Gelado",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/11.svg"
         },
         {
             "id": 12,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Havaiano",
+            "description": "Bebida adocicada preparada com café e leite de coco",
+            "category": "Especial",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/12.svg"
         },
         {
             "id": 13,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
-        },
+            "name": "Árabe",
+            "description": "Bebida preparada com grãos de café árabe e especiarias",
+            "category": "Especial",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/13.svg"        },
         {
             "id": 14,
-            "name": "Product 1",
-            "description": "This is a product",
-            "category": "Category 1",
-            "price": 9.90
+            "name": "Irlandês",
+            "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
+            "category": "Especial",
+            "category2": "Alcoólico",
+            "price": 9.90,
+            "UrlImg":"http://localhost:5173/src/assets/images/products/13.svg"
         }
     ]
 }

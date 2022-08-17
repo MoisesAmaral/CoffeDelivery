@@ -1,8 +1,13 @@
 import { RoutesApp } from '../src/Routes/Routes'
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <RoutesApp />   
+    <>
+    <RoutesApp />
+    <ToastContainer />
+    </>
   )
 }
 export default App

@@ -24,6 +24,13 @@ export const ContentMain = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
+
+  @media (max-width: 1300px) {
+        padding: 3.2rem 10rem;
+    }
+    @media (max-width: 998px) {
+        padding: 3.2rem 5rem;
+    }
 `;
 // export const VideoBg = styled.video`
 //   position: absolute;

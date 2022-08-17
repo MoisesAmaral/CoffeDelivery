@@ -1,7 +1,232 @@
-export function Checkout(){
-    return (
-        <div>
-        <h1>Checkout</h1>
-        </div>
-    )
+import { apiCEP } from "../../services/api";
+import { FocusEvent } from "react";
+import { FieldValues, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { Navbar } from "../../components/Navbar";
+import {
+  CheckoutAddress,
+  CheckoutAddressDiv,
+  CheckoutAddressP,
+  CheckoutCart,
+  CheckoutCartList,
+  CheckoutDiv,
+  CheckoutForm,
+  CheckoutFormDiv1,
+  CheckoutFomDiv2,
+  CheckoutformBairro,
+  CheckoutformCep,
+  CheckoutformCidade,
+  CheckoutformComplemento,
+  CheckoutformEstado,
+  CheckoutformNumero,
+  CheckoutformRua,
+  CheckoutH1,
+  CheckoutImg,
+  ContainerCheckout,
+  ContentCheckout,
+  CheckoutFomDiv3,
+  CheckoutPayment,
+  CheckoutPaymentDiv,
+  CheckoutPaymentP,
+  CheckoutPaymentDivButton,
+  CheckoutCartContent,
+  CheckoutCartNoItens,
+  CheckoutCartListItem,
+  CheckoutCartListItemDiv,
+  CheckoutCartListItemDivButtons,
+  CheckoutCartListItemImg,
+  CheckoutCartListItemDivPrice,
+} from "./stylesCkeckout";
+import Location from "../../assets/images/iconlocation.svg";
+import Icon$ from "../../assets/images/icon$.svg";
+import IconCard from "../../assets/images/IconCard.svg";
+import IconBanck from "../../assets/images/iconBanck.svg";
+import IconDollar from "../../assets/images/IconDollar.svg";
+
+import Coffee1 from "../../assets/images/products/1.svg";
+import { Minus, Plus, Trash } from "phosphor-react";
+import {
+  ProductsQuantity,
+  ProductsQuantityButton,
+  ProductsQuantitySpan,
+} from "../../components/Products/stylesProducts";
+
+type FormValues = {
+  bairro: string;
+  cep: string;
+  complemento: string;
+  ddd: string;
+  gia: string;
+  ibge: string;
+  localidade: string;
+  logradouro: string;
+  siafi: string;
+  uf: string;
+  numero: string;
+};
+
+export function Checkout() {
+  const { register, handleSubmit, setValue, setFocus } = useForm<FormValues>();
+
+  const hendleCheckCep = (event: FocusEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    if (event.target.value.length === 8) {
+      const cep = event.target.value;
+      apiCEP.get(`${cep}/json/`).then((response) => {
+        setValue("cep", response.data.cep);
+        setValue("logradouro", response.data.logradouro);
+        setValue("bairro", response.data.bairro);
+        setValue("localidade", response.data.localidade);
+        setValue("uf", response.data.uf);
+        setFocus("numero");
+      });
+    } else {
+      toast.error("Digite um CEP válido!");
+    }
+  };
+
+  function onSubmit(data: FieldValues) {
+    console.log(data);
+  }
+
+  return (
+    <>
+      <Navbar />
+      <ContainerCheckout>
+        <ContentCheckout>
+          <CheckoutAddress>
+            <CheckoutH1>Complete seu pedido</CheckoutH1>
+            <CheckoutDiv>
+              <CheckoutAddressDiv>
+                <CheckoutImg src={Location} />
+                <CheckoutAddressP>
+                  Endereço de Entrega
+                  <br />
+                  <span>Informe o endereço onde deseja receber seu pedido</span>
+                </CheckoutAddressP>
+              </CheckoutAddressDiv>
+              <CheckoutForm onSubmit={handleSubmit(onSubmit)}>
+                <CheckoutFormDiv1>
+                  <CheckoutformCep
+                    type="text"
+                    placeholder="CEP"
+                    onBlur={hendleCheckCep}
+                  />
+                  <CheckoutformRua
+                    type="text"
+                    placeholder="Rua"
+                    {...register("logradouro")}
+                    disabled
+                  />
+                </CheckoutFormDiv1>
+
+                <CheckoutFomDiv2>
+                  <CheckoutformNumero
+                    type="text"
+                    placeholder="Número"
+                    {...register("numero")}
+                    required
+                  />
+                  <CheckoutformComplemento
+                    type="text"
+                    placeholder="Complemento"
+                    {...register("complemento")}
+                    required
+                  />
+                </CheckoutFomDiv2>
+
+                <CheckoutFomDiv3>
+                  <CheckoutformBairro
+                    type="text"
+                    placeholder="Bairro"
+                    {...register("bairro")}
+                    disabled
+                  />
+                  <CheckoutformCidade
+                    type="text"
+                    placeholder="Cidade"
+                    {...register("localidade")}
+                    disabled
+                  />
+                  <CheckoutformEstado
+                    type="text"
+                    placeholder="UF"
+                    {...register("uf")}
+                    disabled
+                  />
+                </CheckoutFomDiv3>
+                <button type="submit">enviar</button>
+              </CheckoutForm>
+            </CheckoutDiv>
+            <CheckoutPayment>
+              <CheckoutPaymentDiv>
+                <CheckoutImg src={Icon$} />
+                <CheckoutPaymentP>
+                  Pagamento
+                  <br />
+                  <span>
+                    O pagamento é feito na entrega. Escolha a forma que deseja
+                    pagar
+                  </span>
+                </CheckoutPaymentP>
+              </CheckoutPaymentDiv>
+              <CheckoutPaymentDivButton>
+                <button>
+                  <img src={IconCard} alt="icone Cartão de crédito" />
+                  Cartão de Crédito
+                </button>
+                <button>
+                  <img src={IconBanck} alt="icone Banco" />
+                  Cartão de Débito
+                </button>
+                <button className="active">
+                  <img src={IconDollar} alt="icone Dinheiro" />
+                  Dinheiro
+                </button>
+              </CheckoutPaymentDivButton>
+            </CheckoutPayment>
+          </CheckoutAddress>
+
+          <CheckoutCart>
+            <CheckoutH1>Cafés selecionados</CheckoutH1>
+            <CheckoutCartContent>
+              {/* <CheckoutCartNoItens>
+                  <p>Ops!! Não há itens no carrinho</p>
+                  <button>
+                    Adicionar produtos ao carrinho
+                  </button>
+                  </CheckoutCartNoItens> */}
+              <CheckoutCartList>
+                <CheckoutCartListItem>
+                  <CheckoutCartListItemImg>
+                    <img src={Coffee1} alt="Café" />
+                  </CheckoutCartListItemImg>
+                  <CheckoutCartListItemDiv>
+                    <p>Café 1</p>
+                    <CheckoutCartListItemDivButtons>
+                      <ProductsQuantity>
+                        <ProductsQuantityButton>
+                          <Minus size={16} />
+                        </ProductsQuantityButton>
+                        <ProductsQuantitySpan>1</ProductsQuantitySpan>
+                        <ProductsQuantityButton>
+                          <Plus size={16} />
+                        </ProductsQuantityButton>
+                      </ProductsQuantity>
+                      <button>
+                        <Trash size={16} /> Remover
+                      </button>
+                    </CheckoutCartListItemDivButtons>
+                  </CheckoutCartListItemDiv>
+                  <CheckoutCartListItemDivPrice>
+                    <p>R$ 10,00</p>
+                  </CheckoutCartListItemDivPrice>
+                </CheckoutCartListItem>
+              </CheckoutCartList>
+            </CheckoutCartContent>
+          </CheckoutCart>
+        </ContentCheckout>
+      </ContainerCheckout>
+    </>
+  );
 }

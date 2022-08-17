@@ -16,6 +16,13 @@ export const ContentNav = styled.div`
     justify-content: space-between;
 
     padding: 3.2rem 20rem;
+
+    @media (max-width: 1300px) {
+        padding: 3.2rem 10rem;
+    }
+    @media (max-width: 998px) {
+        padding: 3.2rem 5rem;
+    }
 `
 export const LogoNav = styled.div`
 

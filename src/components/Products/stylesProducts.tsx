@@ -14,6 +14,13 @@ export const ContentProducts = styled.div`
     flex-direction: column;
     padding: 3.2rem 20rem;
 
+    @media (max-width: 1300px) {
+        padding: 3.2rem 10rem;
+    }
+    @media (max-width: 998px) {
+        padding: 3.2rem 5rem;
+    }
+
 `
 export const ProductsH2 = styled.h2`   
     font-family: 'Baloo 2', sans-serif;
@@ -23,11 +30,13 @@ export const ProductsH2 = styled.h2`
     color: var(--base-subtitle);
     margin-bottom: 8rem;    
 `
-export const UlProducts = styled.ul`
-margin-bottom: 50rem;
-    
+export const ProductsUl = styled.ul`
+    margin-bottom: 50rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-gap: 2.5rem;
 `
-export const LiProducts = styled.li`
+export const ProductsLi = styled.li`
     width: 25.6rem;
     height: 31rem;
     border-radius: .6rem 3.2rem;
@@ -36,7 +45,10 @@ export const LiProducts = styled.li`
     flex-direction: column;
     align-items: center;
 
-    background: var(--base-card); ;
+    background: var(--base-card);
+    box-shadow: 0px 0px 10px var(--yellow-shadow);
+
+    margin-bottom: 5rem;
 `
 export const ProductsDivImg = styled.div`
     display: flex;
