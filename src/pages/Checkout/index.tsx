@@ -35,7 +35,15 @@ import {
   CheckoutCartListItemDiv,
   CheckoutCartListItemDivButtons,
   CheckoutCartListItemImg,
+  CheckoutCartListItemDivPriceInfo,
+  CheckoutCartQuantity,
+  CheckoutCartQuantityButton,
+  CheckoutCartQuantitySpan,
   CheckoutCartListItemDivPrice,
+  CheckoutCartListTotal,
+  CheckoutCartListTotalFinal,
+  CheckoutCartListTotalProducts,
+  CheckoutCartListTotalFrete,
 } from "./stylesCkeckout";
 import Location from "../../assets/images/iconlocation.svg";
 import Icon$ from "../../assets/images/icon$.svg";
@@ -45,11 +53,6 @@ import IconDollar from "../../assets/images/IconDollar.svg";
 
 import Coffee1 from "../../assets/images/products/1.svg";
 import { Minus, Plus, Trash } from "phosphor-react";
-import {
-  ProductsQuantity,
-  ProductsQuantityButton,
-  ProductsQuantitySpan,
-} from "../../components/Products/stylesProducts";
 
 type FormValues = {
   bairro: string;
@@ -202,17 +205,19 @@ export function Checkout() {
                     <img src={Coffee1} alt="Café" />
                   </CheckoutCartListItemImg>
                   <CheckoutCartListItemDiv>
-                    <p>Café 1</p>
+                    <CheckoutCartListItemDivPriceInfo>
+                      <p>Expresso Tradicional</p>
+                    </CheckoutCartListItemDivPriceInfo>
                     <CheckoutCartListItemDivButtons>
-                      <ProductsQuantity>
-                        <ProductsQuantityButton>
+                      <CheckoutCartQuantity>
+                        <CheckoutCartQuantityButton>
                           <Minus size={16} />
-                        </ProductsQuantityButton>
-                        <ProductsQuantitySpan>1</ProductsQuantitySpan>
-                        <ProductsQuantityButton>
+                        </CheckoutCartQuantityButton>
+                        <CheckoutCartQuantitySpan>1</CheckoutCartQuantitySpan>
+                        <CheckoutCartQuantityButton>
                           <Plus size={16} />
-                        </ProductsQuantityButton>
-                      </ProductsQuantity>
+                        </CheckoutCartQuantityButton>
+                      </CheckoutCartQuantity>
                       <button>
                         <Trash size={16} /> Remover
                       </button>
@@ -222,6 +227,47 @@ export function Checkout() {
                     <p>R$ 10,00</p>
                   </CheckoutCartListItemDivPrice>
                 </CheckoutCartListItem>
+
+                <CheckoutCartListItem>
+                  <CheckoutCartListItemImg>
+                    <img src={Coffee1} alt="Café" />
+                  </CheckoutCartListItemImg>
+                  <CheckoutCartListItemDiv>
+                    <CheckoutCartListItemDivPriceInfo>
+                      <p>Expresso Tradicional</p>
+                    </CheckoutCartListItemDivPriceInfo>
+                    <CheckoutCartListItemDivButtons>
+                      <CheckoutCartQuantity>
+                        <CheckoutCartQuantityButton>
+                          <Minus size={16} />
+                        </CheckoutCartQuantityButton>
+                        <CheckoutCartQuantitySpan>1</CheckoutCartQuantitySpan>
+                        <CheckoutCartQuantityButton>
+                          <Plus size={16} />
+                        </CheckoutCartQuantityButton>
+                      </CheckoutCartQuantity>
+                      <button>
+                        <Trash size={16} /> Remover
+                      </button>
+                    </CheckoutCartListItemDivButtons>
+                  </CheckoutCartListItemDiv>
+                  <CheckoutCartListItemDivPrice>
+                    <p>R$ 10,00</p>
+                  </CheckoutCartListItemDivPrice>
+                </CheckoutCartListItem>
+
+                <CheckoutCartListTotal>
+                  <CheckoutCartListTotalProducts>
+                    <p>Total de iten</p> <span>R$29.90</span>
+                  </CheckoutCartListTotalProducts>
+                  <CheckoutCartListTotalFrete>
+                    <p>Total de frete</p> <span>R$10,00</span>
+                  </CheckoutCartListTotalFrete>
+                  <CheckoutCartListTotalFinal>
+                    <p>Total</p> <span>R$39.90</span>
+                  </CheckoutCartListTotalFinal>
+                </CheckoutCartListTotal>
+                <button className="ButtonCheckout">Confirmar Pedido</button>
               </CheckoutCartList>
             </CheckoutCartContent>
           </CheckoutCart>

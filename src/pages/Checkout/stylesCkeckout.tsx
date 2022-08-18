@@ -201,13 +201,41 @@ export const CheckoutCartList = styled.ul`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .ButtonCheckout{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1.2rem .8rem;
+        margin-top: 3.5rem;
+        gap: .4rem;
+
+        width: 90%;
+        background: var(--yellow);
+        border-radius: .8rem;
+        border: none;
+
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        font-weight: 700;
+        color: var(--white);
+        text-transform: uppercase;
+
+        transition: all 0.2s;
+
+        &:hover{
+            background: var(--yellow-dark);
+        }
+
+
+    }
 `
 export const CheckoutCartListItem = styled.li`
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
 
     padding-bottom: 2.4rem;
     margin-bottom: 1.6rem;
@@ -216,18 +244,104 @@ export const CheckoutCartListItem = styled.li`
 `
 export const CheckoutCartListItemImg = styled.div`
     img{
-        width: 6.4rem;
-        height: 6.4rem;
+        width: 8rem;
+        height: 8rem;
+        margin-right: 3rem;
     }
 `
 export const CheckoutCartListItemDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    gap: 1.2rem;
 `
 export const CheckoutCartListItemDivButtons = styled.div`
-`
-export const CheckoutCartListItemDivPrice = styled.button`
-`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 2.5rem;
 
-    
+    button{
+        width: 9.5rem;
+        color: var(--base-text);
+        height: 3.8rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: .8rem;
+        gap: .5rem;
+        background: var(--base-button);
+
+        border-radius: .6rem;
+        border: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        transition: all 0.2s;
+
+        svg{
+            color: var(--purple);
+        }
+
+        &:hover{
+            background: var(--base-hover);
+        }
+    }
+`
+export const CheckoutCartQuantity = styled.div`
+    width: 7.2rem;
+    height: 3.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    gap: 1rem;
+    background: var(--base-button);
+
+    border-radius: .6rem;
+`
+export const CheckoutCartQuantityButton = styled.button`
+    background: transparent;
+    border: none;
+    color: var(--purple-dark);
+    align-items: center;
+
+    &:hover {
+        color: var(--purple);
+    }
+`
+export const CheckoutCartQuantitySpan = styled.span`
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.08rem;
+
+    color: var(--base-title);
+`
+export const CheckoutCartListItemDivPriceInfo = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    p{
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+        color: var(--base-text);
+    }    
+`
+export const CheckoutCartListItemDivPrice = styled.div`    
+    p{
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+        color: var(--base-text);
+
+    }
+`
 export const CheckoutCartNoItens = styled.div`
     display: flex;
     flex-direction: column;
@@ -264,13 +378,67 @@ export const CheckoutCartNoItens = styled.div`
         cursor: pointer;
         transition: all 0.2s;
 
-
-
         &:hover{
             background: var(--yellow-dark);
         } 
     }
+`
+export const CheckoutCartListTotal = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+`
+export const CheckoutCartListTotalProducts = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p{
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: var(--base-text);
+    }
+    span{
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        color: var(--base-text);
+    }
 
 `
+export const CheckoutCartListTotalFrete = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p{
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: var(--base-text);
+    }
+    span{
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        color: var(--base-text);
+    }
 
+`
+export const CheckoutCartListTotalFinal = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p{
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+        font-weight: 700;
+        color: var(--base-text);
+    }
 
+    span{
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+        font-weight: 700;
+        color: var(--base-text);
+    }
+
+`
