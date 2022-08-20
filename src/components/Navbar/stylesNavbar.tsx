@@ -76,8 +76,7 @@ export const CartNav = styled.div`
         svg{
         fill: var(--white);
     }
-    }
-    
+    }    
 `
 export const CartNavCounter = styled.div`
     display: flex;

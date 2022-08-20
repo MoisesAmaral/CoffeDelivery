@@ -20,7 +20,6 @@ export const ContentProducts = styled.div`
     @media (max-width: 998px) {
         padding: 3.2rem 5rem;
     }
-
 `
 export const ProductsH2 = styled.h2`   
     font-family: 'Baloo 2', sans-serif;
@@ -31,7 +30,7 @@ export const ProductsH2 = styled.h2`
     margin-bottom: 8rem;    
 `
 export const ProductsUl = styled.ul`
-    margin-bottom: 50rem;
+    margin-bottom: 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     grid-gap: 2.5rem;
@@ -61,7 +60,6 @@ export const ProductsImg = styled.img`
     
     position: relative;
     top: -2rem;
-
 `
 export const ProductsType = styled.p`
     display: flex;
@@ -79,8 +77,7 @@ export const ProductsType = styled.p`
 export const ProductsinfoDiv = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center;    
     margin-top: 1.6rem;
 `
 export const ProductsTitle = styled.h2`
@@ -157,13 +154,12 @@ export const ProductsShoppingCart = styled.div`
     align-items: center;
     justify-content: center;
     background: var(--purple-dark);
+    border-radius: .6rem;
 
     cursor: pointer;
     transition: all .2s;
 
     &:hover {
         background: var(--purple);
-    }
-
-    border-radius: .6rem;
+    }    
 `
